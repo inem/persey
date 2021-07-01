@@ -29,6 +29,12 @@ describe Persey do
       end
     end
 
+    it '#to_hash' do
+      hash = Persey.config.option.to_hash
+      expect(hash[:first]).to eq('first value')
+      expect(hash[:second]).to eq('second value')
+    end
+
     it '#config' do
       expect { Persey.config }.not_to raise_exception
     end
